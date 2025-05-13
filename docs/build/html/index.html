@@ -1,0 +1,185 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&lt;Gestor de Pedidos&gt; &mdash; documentación de Gestor de Pedidos de Delivery - 0.1</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=9c9b61ad"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=f85f4cfb"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            Gestor de Pedidos de Delivery
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul class="simple">
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Gestor de Pedidos de Delivery</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">&lt;no title&gt;</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p># Plataforma de Gestión de Pedidos de Delivery</p>
+<p>## Introducción
+Esta plataforma está diseñada para la gestión eficiente de pedidos de delivery.
+Utiliza <strong>Python</strong> con las bibliotecas <strong>tkinter</strong> para la interfaz de usuario y <strong>sqlite3</strong> para la administración de la base de datos.</p>
+<p>## Características principales
+- <strong>Gestor de Pedidos</strong>: Agregar, actualizar, eliminar y visualizar pedidos.
+- <strong>Interfaz gráfica</strong>: Diseñada con tkinter para una experiencia intuitiva.
+- <strong>Base de datos integrada</strong>: Usa SQLite para almacenar y gestionar pedidos.
+- <strong>Validaciones</strong>: Implementadas para los campos del formulario.</p>
+<p>## Estructura del Código</p>
+<p>### Declaración de colores
+Definidos para una paleta consistente en la interfaz:
+- <cite>bg_color</cite>: Fondo general.
+- <cite>title_bg_color</cite>: Fondo del título principal.
+- <cite>button_bg_color</cite>: Fondo de los botones.
+- <cite>button_del_bg_color</cite>: Fondo del botón de eliminación.</p>
+<p>### Conexión a la Base de Datos
+La función <cite>create_db</cite> establece la conexión con SQLite y crea <cite>orders.db</cite>.</p>
+<p>### Creación de la Tabla
+La función <cite>orders_table</cite> verifica y crea la tabla <cite>orders</cite> si no existe.</p>
+<p><strong>Estructura de la tabla:</strong>
+- <cite>id</cite>: Identificador único (PK).
+- <cite>nombre</cite>: Cliente.
+- <cite>telefono</cite>: Teléfono.
+- <cite>direccion</cite>: Dirección de entrega.
+- <cite>total</cite>: Monto total.
+- <cite>pedido</cite>: Descripción.
+- <cite>fecha</cite>: Fecha del pedido.</p>
+<p>## Validaciones
+- <cite>validate_name</cite>: Solo letras en el nombre.
+- <cite>validate_phone</cite>: Hasta 10 dígitos en teléfono.
+- <cite>validate_address</cite>: No vacío.</p>
+<p>## Formulario de Ingreso
+Incluye:
+- Nombre del cliente.
+- Teléfono.
+- Dirección.
+- Monto total.
+- Pedido.
+- Fecha (seleccionable con un calendario).</p>
+<p>## Tabla de Visualización
+Se usa un <strong>Treeview</strong> con:
+- Estilos personalizados para encabezado y filas.
+- Opciones para seleccionar y manipular registros.</p>
+<p>## Botones y Funciones
+- <strong>Guardar</strong>: Agrega un nuevo pedido (<cite>add_order</cite>).
+- <strong>Eliminar</strong>: Borra el pedido seleccionado (<cite>delete_order</cite>).
+- <strong>Actualizar</strong>: Modifica detalles (<cite>update_order</cite>).</p>
+<p>## Uso de la Plataforma</p>
+<p>### Ingreso de pedidos
+1. Complete los campos del formulario:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Nombre del cliente</strong></p></li>
+<li><p><strong>Teléfono</strong></p></li>
+<li><p><strong>Dirección</strong></p></li>
+<li><p><strong>Monto total</strong></p></li>
+<li><p><strong>Pedido</strong></p></li>
+<li><p><strong>Fecha</strong> (seleccionable mediante el calendario)</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Haga clic en <strong>Guardar</strong> para registrar el pedido en la base de datos.</p></li>
+</ol>
+<p>### Modificación o eliminación de pedidos
+1. Seleccione un pedido en la tabla de visualización.
+2. Para modificarlo, edite los datos en el formulario y presione <strong>Actualizar</strong>.
+3. Para eliminarlo, haga clic en <strong>Eliminar</strong>.</p>
+<p>—</p>
+<p>## Mejoras Futuras</p>
+<p>Se planean las siguientes mejoras para la plataforma:</p>
+<ul class="simple">
+<li><p><strong>Exportación de datos</strong>: Permitir la exportación a formatos como CSV o Excel.</p></li>
+<li><p><strong>Búsqueda avanzada</strong>: Implementar un sistema de búsqueda por cliente, pedido o fecha.</p></li>
+<li><p><strong>Sistema de autenticación</strong>: Incluir inicio de sesión con roles y permisos diferenciados.</p></li>
+<li><p><strong>Diseño gráfico mejorado</strong>: Optimizar la interfaz para una mejor experiencia de usuario.</p></li>
+<li><p><strong>Historial de pedidos</strong>: Implementar una sección para ver pedidos anteriores.</p></li>
+<li><p><strong>Contador de pedidos diarios</strong>: Agregar un indicador del número de pedidos registrados en el día.</p></li>
+<li><p><strong>Dashboard de estadísticas</strong>: Visualización de métricas clave para los usuarios.</p></li>
+</ul>
+<p>—</p>
+<p>## Notas Finales</p>
+<p>Esta plataforma está diseñada para ser <strong>escalable y adaptable</strong> a pequeñas empresas que gestionan pedidos de delivery.
+Con futuras actualizaciones, se mejorará la usabilidad y se agregarán nuevas funcionalidades para optimizar la gestión de pedidos.</p>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor 2025, Emanuel Pages.</p>
+  </div>
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
