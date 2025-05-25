@@ -1,7 +1,8 @@
 import sqlite3
 import re
 from tkinter import messagebox
-from logger import log_action, logger
+from logger import log_action, logger_subject
+
 
 class OrderManager:
     def __init__(self):
@@ -26,13 +27,10 @@ class OrderManager:
         """)
         self.connection.commit()
 
-    @log_action(logger)
-    def add_order(self, tree, var_nombre_cliente,
-                  var_telefono_cliente,
-                  var_direccion_cliente,
-                  var_monto_cliente,
-                  var_pedido_cliente,
-                  var_fecha_cliente):
+    @log_action(logger_subject)
+    def add_order(self, tree, var_nombre_cliente, var_telefono_cliente,
+                  var_direccion_cliente, var_monto_cliente,
+                  var_pedido_cliente, var_fecha_cliente):
         try:
             data = (
                 var_nombre_cliente,
@@ -65,15 +63,15 @@ class OrderManager:
             messagebox.showerror("Error de validación", str(ve))
 
         except sqlite3.DatabaseError as db_err:
-            messagebox.showerror("Error de base de datos",
-                                 f"Ocurrió un error al insertar en la base de datos: {db_err}")
+            messagebox.showerror(
+                "Error de base de datos", f"Ocurrió un error al insertar en la base de datos: {db_err}")
             self.connection.rollback()
 
         except Exception as e:
-            messagebox.showerror("Error inesperado",
-                                 f"Ocurrió un error inesperado: {e}")
+            messagebox.showerror(
+                "Error inesperado", f"Ocurrió un error inesperado: {e}")
 
-    @log_action(logger)
+    @log_action(logger_subject)
     def delete_order(self, tree, selected_items):
         try:
             if not selected_items:
@@ -91,8 +89,8 @@ class OrderManager:
                 self.connection.commit()
                 tree.delete(selected_item)
 
-            messagebox.showwarning(
-                "Atención", "La orden fue eliminada con éxito.")
+            messagebox.showinfo(
+                "Eliminado", "La orden fue eliminada con éxito.")
 
         except sqlite3.Error:
             messagebox.showerror(
@@ -100,15 +98,12 @@ class OrderManager:
             self.connection.rollback()
 
         except Exception:
-            messagebox.showerror("Error", "Ocurrió un error.")
+            messagebox.showerror("Error", "Ocurrió un error inesperado.")
 
-    @log_action(logger)
-    def update_order(self, tree, selected_items,
-                     var_nombre_cliente,
-                     var_telefono_cliente,
-                     var_direccion_cliente,
-                     var_monto_cliente,
-                     var_pedido_cliente,
+    @log_action(logger_subject)
+    def update_order(self, tree, selected_items, var_nombre_cliente,
+                     var_telefono_cliente, var_direccion_cliente,
+                     var_monto_cliente, var_pedido_cliente,
                      var_fecha_cliente):
         try:
             if not selected_items:

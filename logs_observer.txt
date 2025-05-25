@@ -1,0 +1,4 @@
+[FILE LOG] 2025-05-25 16:04:13.123634: update_order fue ejecutado con args: (<model.OrderManager object at 0x0000021235B4D4F0>, <tkinter.ttk.Treeview object .!treeview>, ('I001',), '', '', '', '', 'dsds', ''), kwargs: {}
+[FILE LOG] 2025-05-25 16:05:26.091675: delete_order fue ejecutado con args: (<model.OrderManager object at 0x000001CDC42FA810>, <tkinter.ttk.Treeview object .!treeview>, ('I001',)), kwargs: {}
+[FILE LOG] 2025-05-25 16:06:14.568502: add_order fue ejecutado con args: (<model.OrderManager object at 0x000001CDC42FA810>, <tkinter.ttk.Treeview object .!treeview>, 'Emanuel', '011394939254', 'Tres Arroyos', '$20.000', '1 Muzza', '25-05-2025'), kwargs: {}
+[FILE LOG] 2025-05-25 16:06:19.986544: add_order fue ejecutado con args: (<model.OrderManager object at 0x000001CDC42FA810>, <tkinter.ttk.Treeview object .!treeview>, 'Emanuel', '011394934', 'Tres Arroyos', '$20.000', '1 Muzza', '25-05-2025'), kwargs: {}

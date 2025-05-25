@@ -2,6 +2,7 @@ from model import OrderManager
 from view import MainView
 from tkinter import Tk
 
+
 class AppController:
     def __init__(self, root):
         self.model = OrderManager()
@@ -27,6 +28,7 @@ def main():
     root = Tk()
     AppController(root)
     root.mainloop()
+
 
 if __name__ == "__main__":
     main()

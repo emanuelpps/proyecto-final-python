@@ -2,3 +2,10 @@ add_order fue ejecutado
 add_order fue ejecutado
 update_order fue ejecutado
 add_order fue ejecutado
+[FILE LOG] 2025-05-24 20:48:28.754053: update_order fue ejecutado con args: (<model.OrderManager object at 0x000002378535C650>, <tkinter.ttk.Treeview object .!treeview>, ('I002',), '', '', '', 'dasadssd', '', ''), kwargs: {}
+update_order fue ejecutado con args: (<model.OrderManager object at 0x000002378535C650>, <tkinter.ttk.Treeview object .!treeview>, ('I002',), '', '', '', 'dasadssd', '', ''), kwargs: {}
+[FILE LOG] 2025-05-24 20:50:13.815073: delete_order fue ejecutado con args: (<model.OrderManager object at 0x000002378535C650>, <tkinter.ttk.Treeview object .!treeview>, ('I002',)), kwargs: {}
+delete_order fue ejecutado con args: (<model.OrderManager object at 0x000002378535C650>, <tkinter.ttk.Treeview object .!treeview>, ('I002',)), kwargs: {}
+delete_order fue ejecutado con args: (<model.OrderManager object at 0x000001CDC42FA810>, <tkinter.ttk.Treeview object .!treeview>, ('I001',)), kwargs: {}
+add_order fue ejecutado con args: (<model.OrderManager object at 0x000001CDC42FA810>, <tkinter.ttk.Treeview object .!treeview>, 'Emanuel', '011394939254', 'Tres Arroyos', '$20.000', '1 Muzza', '25-05-2025'), kwargs: {}
+add_order fue ejecutado con args: (<model.OrderManager object at 0x000001CDC42FA810>, <tkinter.ttk.Treeview object .!treeview>, 'Emanuel', '011394934', 'Tres Arroyos', '$20.000', '1 Muzza', '25-05-2025'), kwargs: {}
